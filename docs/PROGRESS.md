@@ -48,10 +48,41 @@
      - MySQL: Geographic data (Lantmäteriet)
      - Neo4j: Election data (val.se)
 
+### 2024-03-21
+1. Database Connections Testing
+   Successfully tested and verified access to all databases:
+
+   a) SQLite Database (counties-sqlite):
+   - Contains information about Swedish counties
+   - Successfully queried county information
+   - Data includes population, area, density, etc.
+
+   b) Neo4j Database (riksdagsval-neo4j):
+   - Contains election results for 2018 and 2022
+   - Successfully queried party results by municipality
+   - Data includes votes per party for each election year
+
+   c) MySQL Database (geo-mysql):
+   - Contains geographic data for Swedish localities
+   - Successfully queried location data
+   - Includes coordinates, municipality, and county information
+
+   d) MongoDB Database (kommun-info-mongodb):
+   - Contains SCB statistics
+   - Successfully connected to both collections:
+     * `incomeByKommun`: Income statistics 2018-2022 (mean and median)
+     * `ageByKommun`: Age demographics 2018-2022
+   - Data available per municipality and gender
+
+2. Documentation Updates
+   - Updated PROGRESS.md with database testing results
+   - All database connections are now working
+   - Ready to begin data analysis phase
+
 3. Next Steps
-   - Verify all database connections work
-   - Study exercise code examples
-   - Begin implementing analysis based on exercise learnings
+   - Update TODO list with new tasks
+   - Plan data analysis approach
+   - Begin implementing analysis functions
 
 ## Decision Log
 - Project language: English (for international accessibility)
@@ -59,3 +90,56 @@
 - Task management: Using categorized TODO list with status tracking
 - Database configuration: Centralized in backend/config for better organization
 - Project documentation: Maintaining clear connection between components 
+
+## Project Direction and Research Focus
+
+### Main Theme
+"Förändringens geografi: En analys av det politiska skiftet i Sverige 2018-2022"
+
+### Research Focus (G-krav)
+1. Basic Analysis Goals:
+   - Present clear visualization of 2022 election results
+   - Show basic comparison with 2018 results
+   - Investigate correlation between average income and voting patterns
+   - Present findings in a clear, linear narrative
+
+2. Data Sources for Basic Analysis:
+   - Neo4j: Election results 2018/2022
+   - MongoDB: Income data per municipality
+   - MySQL: Basic geographic data for visualization
+
+### Extended Analysis (VG-krav)
+1. Advanced Analysis Goals:
+   - Investigate multiple demographic factors
+   - Analyze complex relationships between variables
+   - Study geographical patterns in political changes
+   - Develop interactive visualizations
+
+2. Additional Data Integration:
+   - Age demographics from MongoDB
+   - Detailed geographic analysis
+   - Multiple variable correlation studies
+
+### Hypotheses
+1. Basic Hypothesis (G-krav):
+   - "There is a correlation between average income and political change in municipalities"
+
+2. Extended Hypotheses (VG-krav):
+   - "Municipalities with similar demographic profiles show similar voting pattern changes"
+   - "Age structure influences political change"
+   - "Geographically close municipalities tend to show similar changes"
+
+### Presentation Plans
+1. Basic Presentation (G-krav):
+   - Simple, clear visualizations
+   - Linear narrative structure
+   - Basic statistical analysis
+   - Clear conclusions
+
+2. Advanced Presentation (VG-krav):
+   - Interactive elements
+   - Multiple perspective analysis
+   - Advanced statistical methods
+   - User-driven data exploration
+
+This direction allows us to fulfill the basic requirements while providing clear paths for extension into VG-level analysis if time and resources permit. 
