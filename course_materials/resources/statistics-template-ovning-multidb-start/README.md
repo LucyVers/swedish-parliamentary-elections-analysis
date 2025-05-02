@@ -561,22 +561,6 @@ let result = stdLib.stats.shapiroWilkTest([1,1,2,3,3]);
 let pValue = result.p;
 ```
 
-## Databasanslutningar och Konfiguration
-
-### Konfigurationsfil
-- Ursprunglig fil: `course_materials/templates/Konfig_fil_för_Statistic_template_V7.txt`
-- Ny plats och namn: `backend/config/database_connections.json`
-- Ändringen gjordes för att:
-  1. Ge filen ett mer beskrivande namn
-  2. Använda korrekt filändelse (.json)
-  3. Placera konfigurationen på en mer logisk plats i projektstrukturen
-
-Filen innehåller anslutningsinformation för:
-- SQLite (counties-databas)
-- MySQL (geografisk data)
-- MongoDB (kommuninformation)
-- Neo4j (riksdagsvaldata)
-
 ## MIT License
 Copyright © 2025 ironboy/NodeHill
 

@@ -1,0 +1,23 @@
+Övning: Använda data från flera datakällor!
+
+
+Instruktioner för övningen hittar du i zip-filen som du laddar hem här:
+LADDA HEM KODEN SOM OVNING-MULTIDB-START.ZIP
+Zippa upp.
+Öppna i VSC
+Kör npm install och därefter npm start
+Samt: Notera att du behöver få en fil/data från Linus att kopiera in/ersätta innehållet i filen databases/databases-in-use med!
+
+Grafiska databashanterare för de olika databaserna!
+Men hjälp av informationen som finns i fil/data som Linus levererar kan du även koppla upp dig mot de olika databaserna via grafiska databaseditorer! Linus visar hur.
+För Neo4j rekommenderar vi Neo4j Desktop som du troligen redan har installerad. Med Neo4j desktop kan du koppla upp dig mot remote databaser så här.
+För MongoDB rekommenderar vi MongoDB Compass. Här använder du anslutningssträngen från Linus fil/data.
+För MySQL rekommenderar vi DBeaver Community. Du kan faktiskt även använda denna editor för SQLite-databaser (och Postgres), om du vill pröva något annat än SQLiteStudio (eller pgAdmin).
+Fördelen med att använda en grafisk editor är att det är lättare att få översikt över materialet och att du kan pröva att skriva olika databasfrågor, innan du tar dem vidare till din kodning.
+Källor till våra dataset
+Länsinfo (SQLite) - https://sv.wikipedia.org/wiki/Sveriges_län
+Statistik om medelåldrar och medel/medianinomst (MongoDB) - https://www.scb.se/hitta-statistik/sverige-i-siffror/djupdykning-i-statistik-om-sveriges-kommuner
+Statistik kring riksdagsval 2018 och 2022 - https://www.val.se/valresultat/riksdag-region-och-kommun/2022/valresultat.html
+Geodata kring tätorter, kommuner och län - Oklart ursprung! Men troligen:https://www.lantmateriet.se/sv/geodata/Geodataportalen
+
+Lösningsförslag: Övning, Temperaturer och nederbörd i Ma
