@@ -70,7 +70,7 @@ Project is in initial setup phase. Currently working on:
 - Downloading required templates and materials
 
 ## Language Note
-All project documentation and code comments are maintained in English to ensure international accessibility.
+All project documentation and code comments are maintained in English to ensure international accessibility. 
 
 ## Project Changes and Configuration
 
