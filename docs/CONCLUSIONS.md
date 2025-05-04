@@ -13,7 +13,7 @@ This analysis explores the political changes in Sweden between the 2018 and 2022
 ## Key Findings
 
 ### 1. Electoral Changes 2018-2022
-- **Major Shifts** ([detailed analysis](PROGRESS.md#2024-05-04)):
+- **Major Shifts** ([detailed analysis](PROGRESS.md#2025-05-04)):
   * Sverige­demokraterna: Significant increase (+4.4% average)
   * Centerpartiet: Notable decline (-2.8% average)
   * Moderaterna: Stable results (±0.0%)
