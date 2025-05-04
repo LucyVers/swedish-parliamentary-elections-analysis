@@ -5,5 +5,6 @@ createMenu('Förändringens geografi: Sverige 2018-2022', [
     { name: 'Jämförelse 2018-2022', script: 'election-comparison.js' }
   ]},
   { name: 'Inkomstanalys', script: 'income-correlation.js' },
+  { name: 'Datakällor', script: 'data-sources.js' },
   { name: 'Databasinspektör', script: 'database-inspector.js' }
 ]);
