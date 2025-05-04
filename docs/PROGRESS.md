@@ -380,3 +380,152 @@ This direction allows us to fulfill the basic requirements while providing clear
    - Implement additional data filters
    - Add trend analysis tools
    - Enhance geographic visualization 
+
+### 2024-05-04 (Update 2)
+## Detailed Visualization Development Documentation
+
+### Initial Challenges and Solutions
+When developing the visualization for election data changes between 2018-2022, we encountered and resolved several challenges:
+
+1. Chart Rendering Optimization:
+   - Initial Problem: Charts not rendering despite correct data processing
+   - Solutions Implemented:
+     * Removed conflicting orientation settings
+     * Optimized chart dimensions and margins
+     * Adjusted bar width to 85% for better readability
+     * Implemented centered zero-point for comparison
+
+2. Technical Implementation Details:
+   ```javascript
+   chartArea: { 
+     left: 200, 
+     top: 120,
+     right: 50,
+     bottom: 50,
+     width: '70%', 
+     height: '85%' 
+   }
+   ```
+
+### Visualization Benefits
+
+1. Readability Improvements:
+   - Clear municipality name display without overlap
+   - Easy left-to-right value comparison
+   - Accommodates all municipalities effectively
+   - Prevents text rotation issues
+
+2. Data Interpretation Features:
+   - Center zero-point for easy identification of:
+     * Positive changes (right-extending bars)
+     * Negative changes (left-extending bars)
+   - Party color coding following Swedish political standards
+   - Scale from -10 to +10 percentage points
+
+3. Analysis Capabilities:
+   - Quick trend identification across municipalities
+   - Easy municipality comparison
+   - Clear outlier detection
+   - Geographical pattern analysis
+
+### Key Findings Display
+Current visualization reveals important trends in 2018-2022 election cycle:
+
+1. Party Performance Trends:
+   - Sverigedemokraterna: Generally positive changes (+4.4% avg)
+   - Centerpartiet: Overall decline (-2.8% avg)
+   - Moderaterna: Stable performance (-0.0%)
+   - Socialdemokraterna: Slight increase (+0.8%)
+
+2. Geographical Insights:
+   - Clear variations in party support across municipalities
+   - Identifiable regional patterns in voting behavior
+   - Notable municipality-specific changes
+
+### Future Enhancement Possibilities
+Potential improvements to consider:
+- Interactive tooltips with detailed statistics
+- Region-specific filters
+- Trend line integration
+- Historical context from previous elections
+- Enhanced geographic visualization tools 
+
+### 2024-05-04
+1. Income Correlation Analysis Implementation
+
+   a) Data Matching Issues:
+   - Initial Problem: System failed to match income data with election results
+   - Error Message: "No data available for analysis after filtering"
+   - Root Cause: Mismatch between expected and actual field names in MongoDB income data
+   
+   b) Field Name Resolution:
+   - Original Search Fields:
+     * 'meanIncome2022'
+     * 'meanIncome2021'
+     * 'medelinkomst'
+   - Actual Data Fields:
+     * 'medelInkomst2018'
+     * 'medelInkomst2019'
+     * 'medelInkomst2020'
+     * 'medelInkomst2021'
+     * 'medelInkomst2022'
+   
+   c) Solution Implementation:
+   - Updated field name list in extractMeanIncome function
+   - Added comprehensive logging for debugging
+   - Enhanced error reporting for data filtering steps
+   - Result: Successfully matching and analyzing data for all parties
+
+2. Analysis Results Verification
+   - Successfully generating correlation coefficients
+   - Example findings:
+     * Sverigedemokraterna: -0.239 (negative correlation with income)
+     * Vänsterpartiet: +0.244 (positive correlation with income)
+     * Arbetarepartiet-Socialdemokraterna: +0.606 (strong positive correlation)
+   
+   - Visualization Components:
+     * Scatter plots showing income vs. vote change
+     * Detailed data tables per municipality
+     * Clear correlation coefficient display with interpretation guide
+
+3. System Architecture Notes
+   - Template Structure:
+     * Diagnostic information display on landing page
+     * Database connection status indicators
+     * Sample data preview for verification
+   - Purpose:
+     * Facilitates debugging and system health monitoring
+     * Provides transparency in data flow
+     * Helps verify data integrity
+
+4. Future Improvements
+   - Consider hiding technical information behind developer view
+   - Enhance user interface for non-technical users
+   - Add more detailed statistical analysis options
+   - Implement trend analysis across multiple elections 
+
+### 2024-05-03 (Update 3)
+1. Database Inspector Page Fix
+
+   a) Issue Identification:
+   - Problem: Database Inspector page was blank/not loading
+   - Root Cause: Incorrect script reference in menu configuration
+   - Original reference: 'db-inspector'
+   - Correct file name: 'database-inspector.js'
+
+   b) Solution Implementation:
+   - Updated _menu.js script reference
+   - Changed from: `script: 'db-inspector'`
+   - To: `script: 'database-inspector.js'`
+   - Result: Successfully loading database inspection tool showing:
+     * SQLite database (counties-sqlite) information
+     * MySQL database (geo-mysql) geographic data
+     * MongoDB database (kommun-info-mongodb) statistics
+     * Neo4j database (riksdagsval-neo4j) election results
+
+   c) Importance:
+   - Database Inspector is crucial for:
+     * Verifying database connections
+     * Debugging data structure issues
+     * Ensuring data consistency across databases
+     * Supporting development and troubleshooting 
