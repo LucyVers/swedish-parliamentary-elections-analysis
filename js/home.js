@@ -6,23 +6,43 @@ addMdToPage(`
 Detta projekt analyserar de politiska förändringarna i Sverige mellan riksdagsvalen 2018 och 2022. 
 Min huvudfråga är: Finns det ett samband mellan ekonomiska faktorer och politiska förändringar i Sveriges kommuner?
 
-## Huvudfokus
-- **Valresultat 2018-2022**: Analys av valresultaten från dessa specifika riksdagsval
-- **Jämförelse mellan valen**: Undersökning av politiska förändringar
-- **Ekonomisk korrelation**: Analys av sambandet mellan medelinkomst och röstmönster
+## Huvudfokus och Resultat
+- **Valresultat 2018-2022**: Detaljerad analys av förändringar i partistöd mellan valen för alla riksdagspartier
+- **Inkomstkorrelation**: Omfattande analys av samband mellan medelinkomst och röstmönster för samtliga partier
+- **Geografiska Mönster**: Identifiering av regionala trender och kommunala skillnader i politiska förändringar
 
-## Datakällor
-- Valresultat från Valmyndigheten (2018 och 2022)
-- Inkomststatistik från SCB
-- Geografisk data från Lantmäteriet
+## Viktiga Upptäckter
+1. **Inkomstsamband**:
+   - Varierande korrelationer mellan inkomstnivåer och partistöd
+   - Både positiva och negativa samband identifierade
+   - Komplext mönster som visar olika socioekonomiska kopplingar
 
-## Hypotes
-Min grundläggande hypotes är att det finns en korrelation mellan medelinkomst och politiska förändringar i kommunerna. 
-Genom att analysera data från olika källor strävar jag efter att undersöka denna hypotes och presentera resultaten på ett 
-tydligt och tillgängligt sätt.
+2. **Regionala Trender**:
+   - Tydliga geografiska mönster i politiska förändringar
+   - Variationer mellan storstadsområden och övriga kommuner
+   - Särskild analys av Stockholms län med alla 26 kommuner
+   - Jämförelser mellan olika län och regioner
+
+3. **Metodologi**:
+   - Omfattande dataanalys från flera officiella källor
+   - Transparent verifieringsprocess för datakvalitet
+   - Standardisering av kommunnamn över olika databaser
+   - Detaljerad kvalitetskontroll av all data
+
+## Interaktiva Visualiseringar
+- Utforska valresultat per kommun och län
+- Analysera inkomstkorrelationer för alla partier
+- Jämföra förändringar mellan valen 2018-2022
+- Geografisk visualisering av politiska förändringar
+
+## Teknisk Implementation
+- Fullständig integration av data från fyra olika databaser
+- Avancerad databehandling för att säkerställa konsistens
+- Responsiv visualisering anpassad för olika skärmstorlekar
+- Automatisk felhantering och datavalidering
 `);
 
-// Add a preview of latest election results
+// Add current election statistics
 addMdToPage(`
 ## Snabbfakta: Riksdagsvalet 2022
 `);
@@ -46,6 +66,18 @@ try {
     data: tableData,
     columnNames: ['Parti', 'Röster', 'Andel (%)']
   });
+
+  // Add note about data sources
+  addMdToPage(`
+## Mer Information
+För detaljerad information om:
+- Datakällor och deras tillförlitlighet
+- Databasstruktur och integration
+- Kvalitetssäkringsprocesser
+
+Besök [Datakällor](javascript:loadPage('data-sources.js')).
+  `);
+
 } catch (error) {
   console.error('Error fetching election data:', error);
   addMdToPage(`

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "counties-sqlite",
+    "type": "sqlite",
+    "file": "counties.sqlite3"
+  },
+  {
+    "name": "geo-mysql",
+    "type": "mysql",
+    "credentials": {
+      "host": "your-mysql-host",
+      "port": 1234,
+      "user": "your-username",
+      "password": "your-password",
+      "database": "your-database"
+    }
+  },
+  {
+    "name": "kommun-info-mongodb",
+    "type": "mongodb",
+    "credentials": {
+      "connectionString": "mongodb+srv://username:password@your-cluster-url/your-database",
+      "database": "your-database-name"
+    }
+  },
+  {
+    "name": "riksdagsval-neo4j",
+    "type": "neo4j",
+    "credentials": {
+      "host": "your-neo4j-host",
+      "port": 7687,
+      "user": "your-username",
+      "password": "your-password",
+      "database": "your-database"
+    }
+  }
+] 

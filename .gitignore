@@ -1,6 +1,9 @@
 # Ingore database-in-use.json - since it may contain sensitive connection data
 databases/databases-in-use.json
 
+# Ignore database connection configuration with sensitive data
+backend/config/database_connections.json
+
 # Logs
 logs
 *.log

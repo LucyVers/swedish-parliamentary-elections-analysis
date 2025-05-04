@@ -1,562 +1,205 @@
 # Project Progress Log
 
-## Setup Phase
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Development Timeline](#development-timeline)
+- [Technical Implementation](#technical-implementation)
+- [Data Analysis Progress](#data-analysis-progress)
+- [Challenges and Solutions](#challenges-and-solutions)
+- [Documentation History](#documentation-history)
 
-### 2024-03-20
-1. Initial Project Setup
-   - Created project directory structure
-   - Initialized documentation
-   - Created TODO list and task tracking system
-   - Set up project organization structure
+## Project Overview
+### Project Identity
+- **Author**: Lucy Sonberg
+- **Base Template**: Statistics Template JS (STJS) v8 by NodeHill
+- **Project Theme**: "Förändringens geografi: En analys av det politiska skiftet i Sverige 2018-2022"
 
-2. Project Structure
-   - Created the following directories:
-     - `data/`: For storing election data and other datasets
+### Project Structure
+- Main components in dedicated directories:
+  - `data/`: Election data and datasets
      - `docs/`: Project documentation
-     - `notebooks/`: Jupyter notebooks for analysis
+  - `notebooks/`: Analysis notebooks
      - `src/`: Source code
-     - `tasks/`: Task management and TODO lists
+  - `tasks/`: Task management
+  - `backend/`: Server and database configurations
 
-3. Next Steps
-   - Awaiting download of Version 7 statistics template
-   - Need to review "Using Data from Multiple Data Sources" exercise
-   - Will initialize Git repository after template review
-
-### 2024-03-XX
-1. Project Components Integration
-   - Moved and renamed database configuration file:
-     - From: `course_materials/templates/Konfig_fil_för_Statistic_template_V7.txt`
-     - To: `backend/config/database_connections.json`
-   - Successfully tested server (localhost:3005)
-
-2. Project Structure Understanding
-   The project consists of three main components that work together:
-
-   a) Main Assignment (in `assignments/`)
-   - Project goal: Create narrative about 2018/2022 parliamentary elections
-   - Requirements: Use Statistics Template V8 and multiple data sources
-
-   b) Exercise Materials (in `resources/`)
-   - Contains "Using Data from Multiple Data Sources" exercise
-   - Provides example code for database connections and queries
-   - Serves as learning tool and template for our project
-
-   c) Database Configuration
-   - Linus's file provides access to all required databases:
-     - SQLite: County information (Wikipedia)
-     - MongoDB: SCB statistics (demographics/income)
-     - MySQL: Geographic data (Lantmäteriet)
-     - Neo4j: Election data (val.se)
-
-### 2025-03-21
-1. Database Connections Testing
-   Successfully tested and verified access to all databases:
-
-   a) SQLite Database (counties-sqlite):
-   - Contains information about Swedish counties
-   - Successfully queried county information
-   - Data includes population, area, density, etc.
-
-   b) Neo4j Database (riksdagsval-neo4j):
-   - Contains election results for 2018 and 2022
-   - Successfully queried party results by municipality
-   - Data includes votes per party for each election year
-
-   c) MySQL Database (geo-mysql):
-   - Contains geographic data for Swedish localities
-   - Successfully queried location data
-   - Includes coordinates, municipality, and county information
-
-   d) MongoDB Database (kommun-info-mongodb):
-   - Contains SCB statistics
-   - Successfully connected to both collections:
-     * `incomeByKommun`: Income statistics 2018-2022 (mean and median)
-     * `ageByKommun`: Age demographics 2018-2022
-   - Data available per municipality and gender
-
-2. Documentation Updates
-   - Updated PROGRESS.md with database testing results
-   - All database connections are now working
-   - Ready to begin data analysis phase
-
-3. Next Steps
-   - Update TODO list with new tasks
-   - Plan data analysis approach
-   - Begin implementing analysis functions
-
-## Decision Log
-- Project language: English (for international accessibility)
-- Documentation structure: Markdown files for easy version control
-- Task management: Using categorized TODO list with status tracking 
-- Database configuration: Centralized in backend/config for better organization
-- Project documentation: Maintaining clear connection between components 
-
-## Project Direction and Research Focus
-
-### Main Theme
-"Förändringens geografi: En analys av det politiska skiftet i Sverige 2018-2022"
-
-### Research Focus (G-krav)
-1. Basic Analysis Goals:
+### Project Goals
+1. **Basic Analysis (G-krav)**:
    - Present clear visualization of 2022 election results
    - Show basic comparison with 2018 results
    - Investigate correlation between average income and voting patterns
    - Present findings in a clear, linear narrative
 
-2. Data Sources for Basic Analysis:
-   - Neo4j: Election results 2018/2022
-   - MongoDB: Income data per municipality
-   - MySQL: Basic geographic data for visualization
-
-### Extended Analysis (VG-krav)
-1. Advanced Analysis Goals:
+2. **Extended Analysis (VG-krav)**:
    - Investigate multiple demographic factors
    - Analyze complex relationships between variables
    - Study geographical patterns in political changes
    - Develop interactive visualizations
 
-2. Additional Data Integration:
-   - Age demographics from MongoDB
-   - Detailed geographic analysis
-   - Multiple variable correlation studies
-
-### Hypotheses
-1. Basic Hypothesis (G-krav):
+### Research Hypotheses
+1. **Basic Hypothesis (G-krav)**:
    - "There is a correlation between average income and political change in municipalities"
 
-2. Extended Hypotheses (VG-krav):
+2. **Extended Hypotheses (VG-krav)**:
    - "Municipalities with similar demographic profiles show similar voting pattern changes"
    - "Age structure influences political change"
    - "Geographically close municipalities tend to show similar changes"
 
-### Presentation Plans
-1. Basic Presentation (G-krav):
-   - Simple, clear visualizations
-   - Linear narrative structure
-   - Basic statistical analysis
-   - Clear conclusions
+## Development Timeline
 
-2. Advanced Presentation (VG-krav):
-   - Interactive elements
-   - Multiple perspective analysis
-   - Advanced statistical methods
-   - User-driven data exploration
+### Phase 1: Setup and Planning (March 2024)
+1. **Initial Setup** (2024-03-20)
+   - Created project directory structure
+   - Initialized documentation
+   - Created task tracking system
+   - Set up Git repository
 
-This direction allows us to fulfill the basic requirements while providing clear paths for extension into VG-level analysis if time and resources permit.
+2. **Component Integration** (2024-03-XX)
+   - Moved database configuration from template
+   - Successfully tested server (localhost:3005)
+   - Integrated Statistics Template JS v8
 
-### 2024-05-01
-1. Visualization Improvements and Debugging
-   
-   a) Database Connection Issues (counties-sqlite):
-   - Problem: Unable to fetch counties from database
-   - Root Cause: Incorrect column name in SQL query ('name' instead of 'lan')
-   - Solution: 
-     * Verified database structure using `.schema countyInfo`
-     * Updated SQL query to `SELECT lan as name FROM countyInfo ORDER BY lan`
-     * Added improved error handling and logging
-   - Result: Successfully retrieved all 21 counties
+### Phase 2: Database Implementation (March 2024)
+1. **Database Connections** (2024-03-21)
+   - SQLite: County information verified
+   - Neo4j: Election results 2018/2022 connected
+   - MySQL: Geographic data integrated
+   - MongoDB: SCB statistics linked
 
-   b) Party Name Management:
-   - Problem: Party names in database didn't match configuration
-   - Solution:
-     * Updated partyConfig with exact names from database
-     * Added handling for special cases (e.g., trailing space in "Liberalerna ")
-     * Included "Övriga anmälda partier" with grey color
-   - Result: Correct matching between database and configuration
+2. **Data Source Integration**
+   - Election data from Valmyndigheten
+   - Income statistics from SCB
+   - Geographic data from Lantmäteriet
+   - County information from verified sources
 
-   c) Visualization Components:
-   - Implemented county selection dropdown
-   - Created bar chart for party distribution per municipality
-   - Color-coded parties according to standard colors
-   - Added responsive design for different screen sizes
+### Phase 3: Analysis Development (May 2024)
+1. **Visualization Development** (2024-05-01)
+   - Implemented county selection system
+   - Created party distribution visualizations
+   - Added responsive design features
+   - Integrated interactive elements
 
-2. Technical Improvements
-   - Switched from object to Map for party configuration
-   - Enhanced error handling in database queries
-   - Implemented backup county list for database failures
-   - Added detailed logging for debugging purposes
+2. **Data Analysis Implementation** (2024-05-03)
+   - Income correlation analysis
+   - Geographic pattern recognition
+   - Municipality comparison tools
+   - Trend analysis implementation
 
-3. Next Steps
-   - Consider adding comparison with 2018 election data
-   - Possible implementation of interactive elements
-   - Plan integration with income data from MongoDB 
+## Technical Implementation
 
-### 2024-05-01
-1. MySQL Database Structure Investigation
-   
-   a) Column Name Issue Resolution:
-   - Problem: Error "Unknown column 'tatort' in 'field list'"
-   - Investigation:
-     * Direct database structure inspection revealed correct column names
-     * Found that 'locality' is the correct column name, not 'tatort'
-   - Database Structure Clarification:
-     * id: Numeric identifier
-     * county: County name
-     * municipality: Municipality name
-     * locality: Town/city name (previously incorrectly referenced as 'tatort')
-     * latitude: Geographic latitude
-     * longitude: Geographic longitude
-     * position: Object containing x/y coordinates
-   - Solution Options:
-     * Option 1: Update queries to use 'locality' instead of 'tatort'
-     * Option 2: Use SQL alias: SELECT locality AS tatort
-   - Learning: Importance of verifying actual database structure before debugging application code
+### Database Architecture
+1. **Multi-Database Integration**
+   - SQLite (counties-sqlite):
+     * County information from Wikipedia
+     * Population, area, density data
+     * Basic geographic information
 
-2. Next Steps
-   - Update all existing queries using 'tatort' to use correct column name
-   - Consider adding database structure documentation to prevent similar issues
-   - Review other database queries for potential similar issues 
+   - Neo4j (riksdagsval-neo4j):
+     * Election results 2018 and 2022
+     * Party results by municipality
+     * Vote counts and percentages
 
-### 2024-05-03 (Update 2)
-1. Database Integration Challenges Resolution
+   - MySQL (geo-mysql):
+     * Geographic data from Lantmäteriet
+     * Municipality coordinates
+     * Regional boundaries
 
-   a) MySQL and Neo4j Integration Issues:
-   - Initial Problem: Unable to match counties between SQLite and MySQL databases
-   - Root Cause Analysis:
-     * Different naming conventions in databases:
-       - SQLite format: "Stockholms län", "Västerbottens län"
-       - MySQL format: "Stockholm", "Västerbotten"
-     * Neo4j parameter passing issues with array parameters
-   
-   b) Solution Implementation:
-   - County Name Standardization:
-     * Added string manipulation to remove "län" suffix
-     * Added logic to remove trailing "s" from county names
-     * Example transformations:
-       - "Stockholms län" -> "Stockholm"
-       - "Västerbottens län" -> "Västerbotten"
-       - "Dalarnas län" -> "Dalarna"
+   - MongoDB (kommun-info-mongodb):
+     * SCB statistics collections:
+       - incomeByKommun: 2018-2022 statistics
+       - ageByKommun: Demographic data
+     * Gender-specific information
 
-   c) Neo4j Query Optimization:
-   - Original approach: Using parameterized query with $kommuner parameter
-   - Problem: Parameter binding issues with Neo4j driver
-   - Solution:
-     * Switched to direct string interpolation in Cypher query
-     * Built comma-separated list of quoted municipality names
-     * Example:
-       ```cypher
-       MATCH (n:Partiresultat) 
-       WHERE n.kommun IN ["Karlskrona", "Karlshamn", "Ronneby"] 
-       RETURN n.kommun as kommun, n.parti as parti, n.roster2022 as roster2022
-       ```
-
-   d) Results and Verification:
-   - Successfully retrieving municipality data for all counties
-   - Correct mapping between MySQL geographic data and Neo4j election results
-   - Example success case:
-     * Blekinge län: Found 52 municipalities in MySQL
-     * Successfully matched with Neo4j election data
-     * Complete visualization of party distribution achieved
-
-2. Learning Points
-   - Importance of standardizing data formats across different databases
-   - Need to handle database-specific query parameter requirements
-   - Value of detailed logging for debugging database interactions
-   - Benefits of step-by-step problem isolation and resolution
-
-3. Next Steps
-   - Consider creating a county name mapping table for future reference
-   - Add data validation to ensure consistency across databases
-   - Document database schemas and naming conventions
-   - Consider implementing caching for frequently accessed data 
-
-### 2024-05-01
-1. Database Synchronization Issues and Resolution
-
-   a) Problem: Missing Municipalities in Stockholm County
-   - Initial implementation fetched municipalities from MySQL database
-   - Only 21 out of 26 municipalities in Stockholm County were displayed
-   - Missing municipalities: Salem, Solna, Sundbyberg, Järfälla, Tyresö
-   - Root cause: MySQL database (geo-mysql) contained incomplete municipality data
-
-   b) Database Analysis:
-   - Neo4j database: Contained complete election data for all 290 municipalities
-   - MySQL database: Missing several municipalities in geographic data
-   - SQLite database: Correct county data for all 21 counties
-
-   c) Solution Implementation:
-   - Created special handling for Stockholm County
-   - Hardcoded list of all 26 municipalities:
-     ```javascript
-     const stockholmKommuner = [
-       'Botkyrka', 'Danderyd', 'Ekerö', 'Haninge', 'Huddinge',
-       'Järfälla', 'Lidingö', 'Nacka', 'Norrtälje', 'Nykvarn',
-       'Nynäshamn', 'Salem', 'Sigtuna', 'Sollentuna', 'Solna',
-       'Stockholm', 'Sundbyberg', 'Södertälje', 'Tyresö', 'Täby',
-       'Upplands Väsby', 'Upplands-Bro', 'Vallentuna', 'Vaxholm',
-       'Värmdö', 'Österåker'
-     ];
-     ```
-   - Maintained original MySQL-based logic for other counties
-   - Enhanced error handling and logging
-
-   d) Results:
-   - Complete visualization of all 26 municipalities in Stockholm County
-   - Accurate party distribution for each municipality
-   - Improved code structure with clear separation between special cases and standard logic
-
-   e) Key Learnings:
-   - Importance of validating data sources against each other
-   - Benefits of having redundant data across different databases
-   - Need to document known data discrepancies
-   - Value of detailed logging for debugging
-
-2. Next Steps:
-   - Implement comparison with 2018 election data
-   - Add demographic information from MongoDB
-   - Enhance visualization with interactive elements
-   - Consider updating MySQL database with missing municipalities 
-
-### 2024-05-04
-1. Visualization Development Breakthrough
-
-   a) Chart Rendering Issues Resolution:
-   - Initial Problem: Charts not displaying despite correct data processing
-   - Root Cause Analysis:
-     * Conflicting configuration settings in Google Charts
-     * Animation settings interfering with rendering
-     * Dimension and margin issues
-   
-   b) Solution Implementation:
-   - Removed conflicting orientation settings:
-     * Eliminated conflict between 'bars: horizontal' and 'orientation: vertical'
-     * Simplified chart configuration
-   - Optimized chart dimensions:
-     * Added explicit margins (right: 50, bottom: 50)
-     * Improved spacing for municipality names
-     * Adjusted bar width to 85% for better readability
-   - Enhanced data visualization:
-     * Centered zero-point for intuitive comparison
-     * Consistent party color coding
-     * Clear scale from -10 to +10 percentage points
-
-   c) Visualization Benefits:
-   1. Readability Improvements:
-      * Clear municipality name display
-      * Easy left-to-right value comparison
-      * No text overlap issues
-      * Accommodates all municipalities effectively
-
-   2. Data Interpretation:
-      * Intuitive positive/negative changes
-      * Clear party performance comparison
-      * Easy identification of trends
-      * Effective color coding following party standards
-
-   3. Analysis Capabilities:
-      * Quick trend identification
-      * Easy municipality comparison
-      * Clear outlier detection
-      * Geographical pattern analysis
-
-   d) Key Findings Display:
-   - Party Performance Trends:
-     * Sverigedemokraterna: Generally positive changes (+4.4% avg)
-     * Centerpartiet: Overall decline (-2.8% avg)
-     * Moderaterna: Stable performance (-0.0%)
-     * Socialdemokraterna: Slight increase (+0.8%)
-
-   e) Technical Implementation:
-   ```javascript
-   drawGoogleChart({
-     type: 'BarChart',
-     options: {
-       chartArea: { 
-         left: 200, 
-         top: 120,
-         right: 50,
-         bottom: 50,
-         width: '70%', 
-         height: '85%' 
-       },
-       bars: 'horizontal',
-       isStacked: false
-     }
-   });
-   ```
-
-2. Next Steps:
-   - Consider adding interactive features
-   - Implement additional data filters
-   - Add trend analysis tools
-   - Enhance geographic visualization 
-
-### 2024-05-04 (Update 2)
-## Detailed Visualization Development Documentation
-
-### Initial Challenges and Solutions
-When developing the visualization for election data changes between 2018-2022, we encountered and resolved several challenges:
-
-1. Chart Rendering Optimization:
-   - Initial Problem: Charts not rendering despite correct data processing
-   - Solutions Implemented:
-     * Removed conflicting orientation settings
-     * Optimized chart dimensions and margins
-     * Adjusted bar width to 85% for better readability
-     * Implemented centered zero-point for comparison
-
-2. Technical Implementation Details:
-   ```javascript
-   chartArea: { 
-     left: 200, 
-     top: 120,
-     right: 50,
-     bottom: 50,
-     width: '70%', 
-     height: '85%' 
-   }
-   ```
-
-### Visualization Benefits
-
-1. Readability Improvements:
-   - Clear municipality name display without overlap
-   - Easy left-to-right value comparison
-   - Accommodates all municipalities effectively
-   - Prevents text rotation issues
-
-2. Data Interpretation Features:
-   - Center zero-point for easy identification of:
-     * Positive changes (right-extending bars)
-     * Negative changes (left-extending bars)
-   - Party color coding following Swedish political standards
+### Visualization Components
+1. **Chart Implementation**
+   - Optimized dimensions and margins
+   - Centered zero-point for comparisons
+   - Party-specific color coding
    - Scale from -10 to +10 percentage points
 
-3. Analysis Capabilities:
-   - Quick trend identification across municipalities
-   - Easy municipality comparison
-   - Clear outlier detection
-   - Geographical pattern analysis
+2. **Interactive Features**
+   - County selection dropdown
+   - Municipality-level detailed views
+   - Party distribution charts
+   - Responsive design elements
 
-### Key Findings Display
-Current visualization reveals important trends in 2018-2022 election cycle:
+### System Architecture
+1. **Template Integration**
+   - Database inspector implementation
+   - Connection status monitoring
+   - Data preview functionality
+   - Error handling system
 
-1. Party Performance Trends:
-   - Sverigedemokraterna: Generally positive changes (+4.4% avg)
-   - Centerpartiet: Overall decline (-2.8% avg)
-   - Moderaterna: Stable performance (-0.0%)
-   - Socialdemokraterna: Slight increase (+0.8%)
+## Data Analysis Progress
 
-2. Geographical Insights:
-   - Clear variations in party support across municipalities
-   - Identifiable regional patterns in voting behavior
-   - Notable municipality-specific changes
+### Electoral Changes Analysis
+1. **Party Performance Trends**
+   - Sverigedemokraterna: +4.4% average increase
+   - Centerpartiet: -2.8% average decline
+   - Moderaterna: ±0.0% stable results
+   - Socialdemokraterna: +0.8% slight increase
 
-### Future Enhancement Possibilities
-Potential improvements to consider:
-- Interactive tooltips with detailed statistics
-- Region-specific filters
-- Trend line integration
-- Historical context from previous elections
-- Enhanced geographic visualization tools 
+2. **Geographic Patterns**
+   - Municipality-level analysis
+   - Regional trend identification
+   - Urban vs. rural comparisons
+   - County-specific patterns
 
-### 2024-05-04
-1. Income Correlation Analysis Implementation
+### Income Correlation Findings
+1. **Statistical Results**
+   - Socialdemokraterna: +0.606 (strong positive)
+   - Vänsterpartiet: +0.244 (moderate positive)
+   - Sverigedemokraterna: -0.239 (negative)
+   - Other parties: Varying correlations
 
-   a) Data Matching Issues:
-   - Initial Problem: System failed to match income data with election results
-   - Error Message: "No data available for analysis after filtering"
-   - Root Cause: Mismatch between expected and actual field names in MongoDB income data
-   
-   b) Field Name Resolution:
-   - Original Search Fields:
-     * 'meanIncome2022'
-     * 'meanIncome2021'
-     * 'medelinkomst'
-   - Actual Data Fields:
-     * 'medelInkomst2018'
-     * 'medelInkomst2019'
-     * 'medelInkomst2020'
-     * 'medelInkomst2021'
-     * 'medelInkomst2022'
-   
-   c) Solution Implementation:
-   - Updated field name list in extractMeanIncome function
-   - Added comprehensive logging for debugging
-   - Enhanced error reporting for data filtering steps
-   - Result: Successfully matching and analyzing data for all parties
+2. **Analysis Components**
+   - Scatter plots for income vs. vote change
+   - Municipality data tables
+   - Correlation coefficient displays
+   - Statistical interpretation guides
 
-2. Analysis Results Verification
-   - Successfully generating correlation coefficients
-   - Example findings:
-     * Sverigedemokraterna: -0.239 (negative correlation with income)
-     * Vänsterpartiet: +0.244 (positive correlation with income)
-     * Arbetarepartiet-Socialdemokraterna: +0.606 (strong positive correlation)
-   
-   - Visualization Components:
-     * Scatter plots showing income vs. vote change
-     * Detailed data tables per municipality
-     * Clear correlation coefficient display with interpretation guide
+## Challenges and Solutions
 
-3. System Architecture Notes
-   - Template Structure:
-     * Diagnostic information display on landing page
-     * Database connection status indicators
-     * Sample data preview for verification
-   - Purpose:
-     * Facilitates debugging and system health monitoring
-     * Provides transparency in data flow
-     * Helps verify data integrity
+### Database Integration Issues
+1. **County Name Standardization**
+   - Problem: Different naming conventions across databases
+   - Solution: 
+     * Implemented string manipulation for consistency
+     * Removed "län" suffix and trailing "s"
+     * Created standardized naming system
 
-4. Future Improvements
-   - Consider hiding technical information behind developer view
-   - Enhance user interface for non-technical users
-   - Add more detailed statistical analysis options
-   - Implement trend analysis across multiple elections 
+2. **Missing Municipality Data**
+   - Problem: Incomplete Stockholm County data (21/26 municipalities)
+   - Solution:
+     * Created comprehensive municipality list
+     * Implemented special handling for Stockholm
+     * Enhanced error handling system
 
-### 2024-05-03 (Update 3)
-1. Database Inspector Page Fix
+### Visualization Challenges
+1. **Chart Rendering Issues**
+   - Problem: Display inconsistencies and conflicts
+   - Solution:
+     * Removed conflicting settings
+     * Optimized chart dimensions
+     * Improved data presentation
+     * Enhanced error handling
 
-   a) Issue Identification:
-   - Problem: Database Inspector page was blank/not loading
-   - Root Cause: Incorrect script reference in menu configuration
-   - Original reference: 'db-inspector'
-   - Correct file name: 'database-inspector.js'
+2. **Data Matching Problems**
+   - Problem: Income data-election results mismatch
+   - Solution:
+     * Updated field name references
+     * Enhanced data filtering
+     * Improved error reporting
+     * Added comprehensive logging
 
-   b) Solution Implementation:
-   - Updated _menu.js script reference
-   - Changed from: `script: 'db-inspector'`
-   - To: `script: 'database-inspector.js'`
-   - Result: Successfully loading database inspection tool showing:
-     * SQLite database (counties-sqlite) information
-     * MySQL database (geo-mysql) geographic data
-     * MongoDB database (kommun-info-mongodb) statistics
-     * Neo4j database (riksdagsval-neo4j) election results
+## Documentation History
+- March 2024: Initial setup and structure
+- March 2024: Database integration documentation
+- May 2024: Analysis implementation details
+- May 2024: Final conclusions and findings
 
-   c) Importance:
-   - Database Inspector is crucial for:
-     * Verifying database connections
-     * Debugging data structure issues
-     * Ensuring data consistency across databases
-     * Supporting development and troubleshooting 
-
-### 2024-05-03 (Update 4)
-1. Data Sources Documentation Page Implementation
-
-   **Overview:**
-   - Created a comprehensive data sources documentation page
-   - Integrated it into the main navigation menu
-   - Added detailed information about all data sources
-
-   **Key Components:**
-   - Source descriptions for:
-     * Election data (Valmyndigheten)
-     * Income statistics (SCB)
-     * Geographic data (Lantmäteriet)
-   - Reliability assessments for each source
-   - Data quality metrics and verification processes
-   - Live database structure examples with sample data
-
-   **Technical Implementation:**
-   - Created new `data-sources.js` script
-   - Added database query integration for live data examples
-   - Implemented markdown-based content structure
-   - Added proper error handling for database queries
-
-   **Impact:**
-   - Enhanced project transparency
-   - Improved data source documentation
-   - Better understanding of data quality
-   - Clear overview of database structures
-
-   **Status:** ✅ Completed and fully functional 
+## Key Decisions
+- Project Language: English for international accessibility
+- Documentation: Markdown format for version control
+- Database Config: Centralized in backend/config
+- Error Handling: Comprehensive logging system 
