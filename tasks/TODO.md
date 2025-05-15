@@ -6,73 +6,54 @@
 - Add code comments
 - Update this TODO list
 
-## CURRENT FOCUS: Remaining G-Requirements 🚨
-These must be completed first:
-
-### Education Data Integration (Current Focus)
-
-#### 1. Data Verification & Preparation
-- [x] Verify data conversion process:
-  - [x] Run education_data_converter.js
-  - [x] Verify CSV output format
-  - [x] Confirm all 290 municipalities are included
-  - [x] Document any missing or problematic data
-
-- [x] Verify municipality name matching:
-  - [x] Compare with existing election data municipalities
-  - [x] Test normalizeKommunName function consistency
-  - [x] Create list of any problematic matches
-  - [x] Document matching methodology
-  
-  Implementation completed ✅:
-  - [x] Municipality name standardization successful:
-    - [x] Fixed mismatches for Lilla Edet, Upplands Väsby, and Östra Göinge
-    - [x] Verified all 290 municipalities match perfectly
-    - [x] Documented fix in PROGRESS.md
-    - [x] Enhanced name normalization for spaces and special characters
-
-#### 2. Visualization Implementation
-- [ ] Create Google Charts visualizations for education data
-  - [ ] Document visualizations and their purpose
-- [ ] Connect education data with election results
-  - [ ] Document data flow and connections
-- [ ] Find and analyze correlations between education and voting patterns
-  - [ ] Document analysis methods and results
-- [ ] Add narrative explanations for findings
-  - [ ] Document conclusions and reasoning
-
-### Narrative Improvements
-- [ ] Enhance explanatory texts for all visualizations
-- [ ] Improve story flow between different analyses
-- [ ] Add context to data presentations
-
-## NEXT STEPS: Remaining VG-Requirements ⭐
-To be addressed after G-requirements are met:
+## CURRENT FOCUS: VG-Requirements 🚨
 
 ### Additional Analysis Needed
 - [ ] Add second additional data source (beyond education data)
   - [ ] Document data source and integration decisions
-- [ ] Investigate causality for correlations
-  - [ ] Document methodology and results
 - [ ] Perform two-point T-test
   - [ ] Check normal distribution
   - [ ] Document any outlier removal
   - [ ] Document statistical methods
 
 ### Interactive Features to Add
-- [ ] Implement dropdowns for data filtering
-- [ ] Add sorting capabilities
-- [ ] Enhance data exploration tools
+- [ ] Add additional sorting capabilities for new data source
+- [ ] Enhance data exploration tools for new data source
   - [ ] Document all new interactive features
 
-### Advanced Implementation Needed
-- [ ] Complex data integration between all sources
-- [ ] Multi-database synchronization
-- [ ] Performance optimization
-- [ ] Comprehensive technical documentation
-- [ ] Security measures documentation
-- [ ] Database configuration security
-- [ ] Git security verification
+## COMPLETED: VG-Requirements ⭐
+
+### Advanced Features Implemented
+- [x] Interactive data visualization with dropdowns and sorting
+- [x] Kausalitetsanalys (causality analysis) for education data
+- [x] Strong narrative structure in education analysis
+
+## Final Quality Assurance 🔍
+### Project Structure and Cleanup
+- [ ] Review and clean up project structure:
+  - [ ] Verify folder structure matches project overview documentation
+  - [ ] Remove unused files and scripts
+  - [ ] Clean up duplicate data files
+  - [ ] Ensure consistent file naming conventions
+  - [ ] Update documentation to reflect current structure
+
+- [ ] Code organization:
+  - [ ] Review and clean up JavaScript files
+  - [ ] Remove commented-out code
+  - [ ] Consolidate utility functions
+  - [ ] Verify all imports are used
+
+- [ ] Data verification:
+  - [ ] Check for duplicate datasets
+  - [ ] Verify all data sources are properly referenced
+  - [ ] Remove temporary/backup data files
+  - [ ] Ensure data file naming is consistent
+
+- [ ] Documentation cleanup:
+  - [ ] Update README files in all directories
+  - [ ] Remove outdated documentation
+  - [ ] Verify installation instructions
+  - [ ] Check all links and references
 
 ## COMPLETED: G-Requirements ✅
 
@@ -94,7 +75,38 @@ To be addressed after G-requirements are met:
 - [x] Application runs with npm install and npm start
 - [x] README and installation guide complete
 
-## COMPLETED: VG-Requirements ⭐
+### Education Data Integration
+#### 1. Data Verification & Preparation
+- [x] Verify data conversion process:
+  - [x] Run education_data_converter.js
+  - [x] Verify CSV output format
+  - [x] Confirm all 290 municipalities are included
+  - [x] Document any missing or problematic data
 
-### Advanced Features Implemented
-- [x] Basic interactive data visualization 
+- [x] Verify municipality name matching:
+  - [x] Compare with existing election data municipalities
+  - [x] Test normalizeKommunName function consistency
+  - [x] Create list of any problematic matches
+  - [x] Document matching methodology
+  
+  Implementation completed ✅:
+  - [x] Municipality name standardization successful:
+    - [x] Fixed mismatches for Lilla Edet, Upplands Väsby, and Östra Göinge
+    - [x] Verified all 290 municipalities match perfectly
+    - [x] Documented fix in PROGRESS.md
+    - [x] Enhanced name normalization for spaces and special characters
+
+#### 2. Visualization Implementation
+- [x] Create Google Charts visualizations for education data
+  - [x] Document visualizations and their purpose
+- [x] Connect education data with election results
+  - [x] Document data flow and connections
+- [x] Find and analyze correlations between education and voting patterns
+  - [x] Document analysis methods and results
+- [x] Add narrative explanations for findings
+  - [x] Document conclusions and reasoning
+
+### Narrative Improvements
+- [x] Enhance explanatory texts for all visualizations
+- [x] Improve story flow between different analyses
+- [x] Add context to data presentations 

@@ -1,0 +1,53 @@
+Projektarbete: En berättelse om Sverige och våra senaste två riksdagsval
+
+Utgå från de dataset du har fått tillgång till i övningen Använda data från flera datakällor.
+
+Betygskrav G
+Du ska bestämma dig för en huvudinriktning på vad du vill undersöka och ett tänkt narrativ (vad du vill berätta om, hur du har tänkt att berätta det, samt om ni har hypoteser om möjliga samband du tror att du kommer att hitta. Det är inte säkert att du kommer att hitta de samband du tror. Även detta kan bli en bra berättelse (se mer under stycket Hitta er berättelse nedan).
+Du ska arbeta med minst version 7 av vår mall för statistik, med vilken ni skapar en webbplats med sidor logiskt ordnade i ett menysystem så att det blir enkelt att hitta runt i din berättelse, bland statistik, förklarande texter och visualiseringar.
+Du ska använda er av samtliga de datakällor som presenterades och ingår i i övningen Använda data från flera datakällor.
+Du får lägga till data från fler datakällor om du vill (se Hitta er berättelse nedan). Dessa kan vara i form av att ni skapar fler tabeller i er SQLite-databas med importerad data, eller CSV-filer eller JSON-filer inkluderade i projektet.
+Använd minst en datakälla utöver de som ingår i övningen Använda data från flera datakällor.
+Du ska redovisa vaifrån datan kommer (källor till datan) på en separat webbsida i webbplatsen! Här ska du även kort skriva något om varje datakällas trovärdighet, samt datans kvalitet!
+Skriva kod som bearbetar data och skapar visualiseringar i form av ett Google Charts-diagram. Inkludera förklarande/berättande som utgör en del av samlade berättelse!
+Du ska utnyttja er av kunna koppla samman data från olika datakällor, skriva grundläggande kod för det. (Kod som hämtar in, kopplar samman och bearbetar data som du har nytta av på flera sidor/ställen i din applikation.
+Du ska hitta korrelationer och trender mellan data och/eller visa att korrelation man tror finns inte finns.
+Repositoriet får absolut inte innehålla uppkopplingsuppgifter för de olika databaserna, men ska innehålla en era egna datakällor (i form av fungerande SQLite-databas och/eller CSV- eller JSON-filer).
+Det ska fungera att köra er applikation genom att klona repositoriet och i branchen main köra npm install följt av npm start.
+
+
+
+
+Betygskrav VG
+Det ska som användare gå att interagera med datan, genom att göra val i dropdowns som styr filtrering och sortering av datan!
+Använd minst två datakällor utöver de som ingår i övningen Använda data från flera datakällor.
+Ert narrativ - vad ni vill undersöka och berätta om och hur ni gör detta ska hålla god kvalitet och följa en röd tråd!
+Ni ska följa upp de korrelationer och trender ni hittar genom att diskutera huruvida det finns kausalitet mellan olika variabler.
+Ni ska genomföra minst en hypotesprövning med tvåpunkts T-test och innan detta kontrollera att båda dataurvalen ni genomför T-testet med är normalfördelade. Ni får lov att justera dem genom att ta bort extremvärden, men ska då redovisa hur ni gjort detta! (Alternativt: Om ni inte hittar något ni tycker är vettigt att genomföra T-tester på - lägg mer arbeta på korrelationer och trender - visa trendlinjer och diskutera hur troliget det är med kausalitet - att en variabel värde är troligen är orsaken/en av orsakerna till en annan variabels värde.)
+Hitta er berättelse
+Tänk på att grundtemat är En berättelse om Sverige och våra senaste två riksdagsval, men utifrån detta kan själv välja olika underteman (saker att berätta om och undersöka statistiskt):Det går att undersöka många saker med de datakällor vi har (+ extra ni lägger till), men ni ska hitta ett intressant tema, t.ex:
+Påverkar var folk bor och hur mycket de tjänar hur de röstar i riksdagsvalet?
+Finns det ställen i landet där väljarsympatierna förändrats kraftigt mellan 2018 och 2022:s riksdagsval? Vad kan detta bero på?
+Påverkar arbetslöshet hur man röstar? (Här behövs en pålitlig datakälla kring arbetslöshet per kommun och/eller län).
+Påverkar andelen av befolkningen på olika ställen i landet hur man röstar? (Här behövs en pålitlig datakälla kring andel med utländsk härkomst i olika kommuner.) Varför? På vilket sätt?
+Observera: Detta var bara några få exempel på olika inriktningar! Hitta gärna er egen inriktning
+En förkastad teori/hypotes är också intressant!
+Om ni påbörjar ert arbete med en tanke om hur ni tror att något är, t.ex. “högre medelinkomst har ett samband med att folk röstar mera åt höger”, så kan det vara intressant även om statistiken motbevisar detta. Då kan vi ha ett narrativ som handlar om “myth busting” - att verkligheten inte är som de flesta kanske tror/har fördomar kring!
+
+Att tänka på praktiskt
+Git är bra på att hantera ändringar i text-baserade filer. Er SQLite-databas är inte textbaserad, utan en binär fil. Kommunicera tydligt med varandra när ni gör ändringar i denna!
+
+
+
+
+
+Inför inlämning i Statistik- och dataanalys-kursen (deadline söndag 4 maj, 23.55)
+
+Inlämning i LearnPoint - VIKTIGT
+Nu finns de detaljerade uppgiftsbeskrivningarna i LearnPoint (identiska med de som finns på bloggen). Utöver beskrivningen finns också den VIKTIGA instruktionen:
+“Lämna in länk till GitHub-repo. Repo:t ska vara öppet och koden som ska granskas/bedömas ska finnas i branchen main”
+
+VIKTIGT ATT TÄNKA PÅ:
+Kontrollera att det som finns i main fungerar innan du/ni lämnar in! Starta upp i webbläsaren och besök alla sidor/menyval! Kontrollera att inga fel visas i utvecklings-konsolen!
+För grupp/projekt-uppgiften gäller att ALLA i gruppen lämnar in GitHub-repo-länken!
+Deadline för både den individuella inlämningen och gruppinlämningen är nu på söndag (4 maj), kl 23.55. Håll deadline!
