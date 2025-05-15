@@ -8,7 +8,32 @@
 
 ## CURRENT FOCUS: VG-Requirements 🚨
 
-### Additional Analysis Needed
+### Data Processing for Unemployment Analysis
+#### Population Data Processing ✅
+- [x] Download and analyze SCB population data:
+  - [x] Get "Folkmängden i Sveriges kommuner 1950–2024"
+  - [x] Create population_data_converter.js
+  - [x] Process and validate data for 2018 and 2022
+  - [x] Document process in PROGRESS.md
+
+#### Unemployment Data Processing (NEXT STEPS)
+- [ ] Analyze downloaded unemployment Excel file:
+  - [ ] Document data format and columns
+  - [ ] Extract data for Sept 2018 & 2022
+  - [ ] Create data conversion script
+  - [ ] Match municipality names with population data
+- [ ] Calculate unemployment rates:
+  - [ ] Combine population and unemployment data
+  - [ ] Calculate percentages for both periods
+  - [ ] Validate results
+- [ ] Document process in PROGRESS.md
+- [ ] Add Arbetsförmedlingen as data source in data-sources.js
+
+### Additional Analysis Implementation
+- [ ] Create unemployment analysis visualization:
+  - [ ] Create unemployment-analysis.js
+  - [ ] Add to navigation menu
+  - [ ] Implement interactive features
 - [ ] Add second additional data source (beyond education data)
   - [ ] Document data source and integration decisions
 - [ ] Perform two-point T-test
