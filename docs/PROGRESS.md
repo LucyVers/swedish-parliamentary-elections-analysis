@@ -216,6 +216,59 @@
    - Minimal impact of primary education
    - Clear geographic patterns in education distribution
 
+### Unemployment Analysis (2025-05-16)
+1. **Data Processing Implementation**
+   - Successfully processed unemployment data for all 290 municipalities:
+     * Converted data from Excel to CSV format
+     * Implemented unemployment rate calculator
+     * Validated calculations and data integrity
+     * Integrated with population data
+
+2. **Statistical Findings**
+   - Average unemployment rates:
+     * 2018: 3.12% national average
+     * 2022: 2.76% national average
+     * Overall trend: 0.36 percentage point decrease
+
+3. **Key Observations**
+   - Geographic patterns:
+     * Lower rates in Stockholm suburbs (Danderyd, Täby)
+     * Lower rates in wealthy coastal areas (Tjörn, Kungsbacka)
+     * Higher rates in some industrial municipalities
+   
+   - Notable changes 2018-2022:
+     * Largest improvements:
+       - Lessebo: -2.28 percentage points (7.22% to 4.94%)
+       - Ronneby: -1.10 percentage points (5.92% to 4.82%)
+     * Notable increases:
+       - Upplands-Bro: +0.96 percentage points
+       - Borlänge: +0.41 percentage points
+
+   - Major cities trends:
+     * Stockholm: 3.11% to 3.37% (increase)
+     * Göteborg: 3.63% to 3.70% (slight increase)
+     * Malmö: 6.54% to 5.76% (significant decrease)
+     * Uppsala: 2.72% to 3.13% (increase)
+
+4. **Data Quality Assurance**
+   - Verified complete dataset for all 290 municipalities
+   - Validated calculation methodology
+   - Confirmed reasonable value ranges (1.16% to 7.22%)
+   - Cross-referenced with official statistics
+
+5. **Statistical Testing and Distribution Analysis** (Added 2025-05-16)
+   - Normality Analysis:
+     * 2018 data: Right-skewed distribution (skewness: 0.646)
+     * 2022 data: Right-skewed distribution (skewness: 0.717)
+     * Visual confirmation through histograms
+   - T-test Findings:
+     * Data does not follow normal distribution
+     * Traditional t-test may not be optimal
+   - Recommendations:
+     * Consider Wilcoxon signed-rank test for future analysis
+     * Data transformation could be explored if normal distribution is required
+     * Document all statistical assumptions and limitations
+
 ## Challenges and Solutions
 
 ### Database Integration Issues

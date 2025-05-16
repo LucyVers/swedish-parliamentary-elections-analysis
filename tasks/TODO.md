@@ -6,54 +6,8 @@
 - Add code comments
 - Update this TODO list
 
-## CURRENT FOCUS: VG-Requirements 🚨
+## CURRENT FOCUS: Final Quality Assurance 🔍
 
-### Data Processing for Unemployment Analysis
-#### Population Data Processing ✅
-- [x] Download and analyze SCB population data:
-  - [x] Get "Folkmängden i Sveriges kommuner 1950–2024"
-  - [x] Create population_data_converter.js
-  - [x] Process and validate data for 2018 and 2022
-  - [x] Document process in PROGRESS.md
-
-#### Unemployment Data Processing (NEXT STEPS)
-- [ ] Analyze downloaded unemployment Excel file:
-  - [ ] Document data format and columns
-  - [ ] Extract data for Sept 2018 & 2022
-  - [ ] Create data conversion script
-  - [ ] Match municipality names with population data
-- [ ] Calculate unemployment rates:
-  - [ ] Combine population and unemployment data
-  - [ ] Calculate percentages for both periods
-  - [ ] Validate results
-- [ ] Document process in PROGRESS.md
-- [ ] Add Arbetsförmedlingen as data source in data-sources.js
-
-### Additional Analysis Implementation
-- [ ] Create unemployment analysis visualization:
-  - [ ] Create unemployment-analysis.js
-  - [ ] Add to navigation menu
-  - [ ] Implement interactive features
-- [ ] Add second additional data source (beyond education data)
-  - [ ] Document data source and integration decisions
-- [ ] Perform two-point T-test
-  - [ ] Check normal distribution
-  - [ ] Document any outlier removal
-  - [ ] Document statistical methods
-
-### Interactive Features to Add
-- [ ] Add additional sorting capabilities for new data source
-- [ ] Enhance data exploration tools for new data source
-  - [ ] Document all new interactive features
-
-## COMPLETED: VG-Requirements ⭐
-
-### Advanced Features Implemented
-- [x] Interactive data visualization with dropdowns and sorting
-- [x] Kausalitetsanalys (causality analysis) for education data
-- [x] Strong narrative structure in education analysis
-
-## Final Quality Assurance 🔍
 ### Project Structure and Cleanup
 - [ ] Review and clean up project structure:
   - [ ] Verify folder structure matches project overview documentation
@@ -61,6 +15,7 @@
   - [ ] Clean up duplicate data files
   - [ ] Ensure consistent file naming conventions
   - [ ] Update documentation to reflect current structure
+  - [ ] Fixa layout-problem där "Kommunnamn" försvinner i menyn
 
 - [ ] Code organization:
   - [ ] Review and clean up JavaScript files
@@ -79,6 +34,34 @@
   - [ ] Remove outdated documentation
   - [ ] Verify installation instructions
   - [ ] Check all links and references
+
+## COMPLETED: VG-Requirements ⭐
+
+### Data Processing and Analysis
+- [x] Population Data Processing
+  - [x] Download and analyze SCB population data
+  - [x] Create population_data_converter.js
+  - [x] Process and validate data for 2018 and 2022
+  - [x] Document process in PROGRESS.md
+
+- [x] Unemployment Data Processing
+  - [x] Analyze and convert unemployment Excel file
+  - [x] Calculate and validate unemployment rates
+  - [x] Match municipality names with population data
+  - [x] Document process and add data source
+
+- [x] Statistical Analysis Implementation
+  - [x] Create unemployment analysis visualization
+  - [x] Perform two-point T-test analysis
+  - [x] Document distribution findings
+  - [x] Recommend alternative statistical methods
+
+### Advanced Features
+- [x] Interactive data visualization with dropdowns and sorting
+- [x] Additional data sources beyond requirements
+- [x] Kausalitetsanalys (causality analysis) for education data
+- [x] Strong narrative structure in education analysis
+- [x] Enhanced data exploration tools
 
 ## COMPLETED: G-Requirements ✅
 
@@ -101,35 +84,17 @@
 - [x] README and installation guide complete
 
 ### Education Data Integration
-#### 1. Data Verification & Preparation
-- [x] Verify data conversion process:
-  - [x] Run education_data_converter.js
-  - [x] Verify CSV output format
-  - [x] Confirm all 290 municipalities are included
-  - [x] Document any missing or problematic data
+- [x] Data Verification & Preparation
+  - [x] Verify data conversion process
+  - [x] Verify municipality name matching
+  - [x] Fix all municipality name mismatches
+  - [x] Document all processes
 
-- [x] Verify municipality name matching:
-  - [x] Compare with existing election data municipalities
-  - [x] Test normalizeKommunName function consistency
-  - [x] Create list of any problematic matches
-  - [x] Document matching methodology
-  
-  Implementation completed ✅:
-  - [x] Municipality name standardization successful:
-    - [x] Fixed mismatches for Lilla Edet, Upplands Väsby, and Östra Göinge
-    - [x] Verified all 290 municipalities match perfectly
-    - [x] Documented fix in PROGRESS.md
-    - [x] Enhanced name normalization for spaces and special characters
-
-#### 2. Visualization Implementation
-- [x] Create Google Charts visualizations for education data
-  - [x] Document visualizations and their purpose
-- [x] Connect education data with election results
-  - [x] Document data flow and connections
-- [x] Find and analyze correlations between education and voting patterns
-  - [x] Document analysis methods and results
-- [x] Add narrative explanations for findings
-  - [x] Document conclusions and reasoning
+- [x] Visualization Implementation
+  - [x] Create and document Google Charts visualizations
+  - [x] Connect with election results
+  - [x] Analyze correlations
+  - [x] Add narrative explanations
 
 ### Narrative Improvements
 - [x] Enhance explanatory texts for all visualizations
