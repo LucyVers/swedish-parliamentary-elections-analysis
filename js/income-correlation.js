@@ -10,7 +10,7 @@ async function fetchInitialData() {
     addMdToPage(`## Test av databasanslutningar`);
     
     // 1. Hämta inkomstdata
-    dbQuery.use('kommun-info-mongodb');
+  dbQuery.use('kommun-info-mongodb');
     let incomeData = await dbQuery.collection('incomeByKommun').find({}).limit(5);
     console.log('Test av inkomstdata (första 5 kommuner):', incomeData);
     
@@ -22,7 +22,7 @@ async function fetchInitialData() {
       data: incomeData,
       fixedHeader: true
     });
-
+  
     // 2. Hämta exempel på valdata
     dbQuery.use('riksdagsval-neo4j');
     let electionQuery = `
@@ -68,9 +68,9 @@ async function fetchInitialData() {
 // Funktion för att hämta partilista
 async function fetchPartyList() {
   try {
-    dbQuery.use('riksdagsval-neo4j');
+  dbQuery.use('riksdagsval-neo4j');
     let partyQuery = `
-      MATCH (n:Partiresultat)
+    MATCH (n:Partiresultat)
       RETURN DISTINCT n.parti as parti
       ORDER BY parti
     `;
@@ -249,25 +249,25 @@ async function main() {
           }
           
           console.log(`GODKÄND: ${result.kommun} - Inkomst: ${meanIncome}, Förändring: ${change}%`);
-          
-          return {
-            Kommun: result.kommun,
+    
+    return {
+      Kommun: result.kommun,
             'Medelinkomst (tkr)': meanIncome,
             'Förändring i röster (%)': parseFloat(change.toFixed(1)),
-            'Röster 2018': total2018,
-            'Röster 2022': total2022
-          };
+      'Röster 2018': total2018,
+      'Röster 2022': total2022
+    };
         })
         .filter(d => d !== null);
 
       console.log('Bearbetad analysdata:', analysisData);
 
-      if (analysisData.length === 0) {
+  if (analysisData.length === 0) {
         throw new Error('Ingen data tillgänglig för analys efter filtrering');
-      }
+  }
 
       // Beräkna korrelation
-      let incomeValues = analysisData.map(d => d['Medelinkomst (tkr)']);
+  let incomeValues = analysisData.map(d => d['Medelinkomst (tkr)']);
       let changeValues = analysisData.map(d => d['Förändring i röster (%)']);
       
       // Kontrollera att vi har giltiga värden för korrelation
@@ -275,21 +275,21 @@ async function main() {
         throw new Error('Ogiltiga värden för korrelationsberäkning');
       }
       
-      let correlation = s.sampleCorrelation(incomeValues, changeValues);
+  let correlation = s.sampleCorrelation(incomeValues, changeValues);
 
       // Visa resultat
-      addMdToPage(`
-      ## Korrelationsanalys för ${selectedParty}
-      Korrelationskoefficient mellan medelinkomst och röstförändring: **${correlation.toFixed(3)}**
-      
-      * En koefficient nära +1 indikerar stark positiv korrelation
-      * En koefficient nära -1 indikerar stark negativ korrelation
-      * En koefficient nära 0 indikerar svag eller ingen korrelation
-      `);
+  addMdToPage(`
+  ## Korrelationsanalys för ${selectedParty}
+  Korrelationskoefficient mellan medelinkomst och röstförändring: **${correlation.toFixed(3)}**
+  
+  * En koefficient nära +1 indikerar stark positiv korrelation
+  * En koefficient nära -1 indikerar stark negativ korrelation
+  * En koefficient nära 0 indikerar svag eller ingen korrelation
+  `);
 
       // Skapa scatter plot
-      drawGoogleChart({
-        type: 'ScatterChart',
+  drawGoogleChart({
+    type: 'ScatterChart',
         data: [
           ['Medelinkomst (tkr)', 'Förändring i röster (%)'],
           ...analysisData.map(d => [
@@ -297,41 +297,41 @@ async function main() {
             parseFloat(d['Förändring i röster (%)'])
           ])
         ],
-        options: {
-          title: `Medelinkomst vs. Röstförändring för ${selectedParty}`,
-          hAxis: { title: 'Medelinkomst (tkr)' },
-          vAxis: { title: 'Förändring i röster (%)', format: '+#.#;-#.#' },
-          trendlines: { 0: {} },
-          height: 500,
-          pointSize: 5,
-          chartArea: { left: 60, top: 50, width: '80%', height: '80%' }
-        }
-      });
+    options: {
+      title: `Medelinkomst vs. Röstförändring för ${selectedParty}`,
+      hAxis: { title: 'Medelinkomst (tkr)' },
+      vAxis: { title: 'Förändring i röster (%)', format: '+#.#;-#.#' },
+      trendlines: { 0: {} },
+      height: 500,
+      pointSize: 5,
+      chartArea: { left: 60, top: 50, width: '80%', height: '80%' }
+    }
+  });
 
       // Lägg till detaljerad datatabell
-      addMdToPage(`
-      ## Detaljerad data per kommun
-      `);
-      
-      tableFromData({
-        data: analysisData,
-        fixedHeader: true,
-        numberFormatOptions: {
-          minimumFractionDigits: 1,
-          maximumFractionDigits: 1,
-          signDisplay: 'always'
-        }
-      });
+  addMdToPage(`
+  ## Detaljerad data per kommun
+  `);
+  
+  tableFromData({
+    data: analysisData,
+    fixedHeader: true,
+    numberFormatOptions: {
+      minimumFractionDigits: 1,
+      maximumFractionDigits: 1,
+      signDisplay: 'always'
     }
-  } catch (error) {
+  });
+    }
+} catch (error) {
     console.error('Fel vid analys:', error);
-    addMdToPage(`
-    ## Error
+  addMdToPage(`
+  ## Error
     Det uppstod ett fel vid analysen:
     \`\`\`
     ${error.message}
     \`\`\`
-    `);
+  `);
   }
 }
 

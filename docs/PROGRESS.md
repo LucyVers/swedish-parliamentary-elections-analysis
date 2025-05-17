@@ -346,6 +346,15 @@ This tool is critical for data quality and matching:
   * Name matching troubleshooting
   * Verification after data updates
 
+- **Reference Files**:
+  * `education_kommun_names.txt` and `education_municipalities.txt`:
+    - Serve as master reference files for municipality names
+    - Contain both original and normalized versions of names
+    - Used to verify correct name standardization
+    - Critical for maintaining data integrity across different data sources
+    - Essential for validating the 290 municipalities requirement
+    - Help identify and resolve naming discrepancies
+
 #### 2. Database Inspector
 A tool for inspecting all data sources:
 - **Purpose**: Provides overview of available data across all databases

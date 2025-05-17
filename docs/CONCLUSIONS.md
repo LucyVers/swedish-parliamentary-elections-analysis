@@ -13,21 +13,21 @@ This analysis explores the political changes in Sweden between the 2018 and 2022
 ## Key Findings
 
 ### 1. Electoral Changes 2018-2022
-- **Major Shifts** ([detailed analysis](PROGRESS.md#2025-05-04)):
+- **Major Shifts** ([detailed analysis](./PROGRESS.md#2025-05-04)):
   * Sverige­demokraterna: Significant increase (+4.4% average)
   * Centerpartiet: Notable decline (-2.8% average)
   * Moderaterna: Stable results (±0.0%)
   * Social­demokraterna: Slight increase (+0.8%)
 
 ### 2. Income-Voting Correlations
-- **Statistical Analysis** ([correlation details](PROGRESS.md#income-correlation-analysis-implementation)):
+- **Statistical Analysis** ([correlation details](./PROGRESS.md#income-correlation-analysis-implementation)):
   * Strong positive correlation with Social­demokraterna (+0.606)
   * Moderate positive correlation with Vänster­partiet (+0.244)
   * Negative correlation with Sverige­demokraterna (-0.239)
   * Varying correlations across other parties
 
 ### 3. Geographic Patterns
-- **Regional Variations** ([Stockholm analysis](PROGRESS.md#database-synchronization-issues-and-resolution)):
+- **Regional Variations** ([Stockholm analysis](./PROGRESS.md#database-synchronization-issues-and-resolution)):
   * Distinct urban vs. rural voting patterns
   * Special analysis of Stockholm County (26 municipalities)
   * Complete coverage of all 290 Swedish municipalities
@@ -46,7 +46,7 @@ This analysis explores the political changes in Sweden between the 2018 and 2022
 - Created comprehensive data validation system
 
 ### 2. Visualization Development
-- **Interactive Features** ([visualization details](PROGRESS.md#visualization-development-breakthrough)):
+- **Interactive Features** ([visualization details](./PROGRESS.md#visualization-development-breakthrough)):
   * Responsive charts with optimal dimensions
   * Intuitive color coding for parties
   * Clear presentation of changes (-10 to +10 percentage points)
@@ -91,7 +91,7 @@ This analysis explores the political changes in Sweden between the 2018 and 2022
 - Documented data limitations and assumptions
 
 ## References
-- [Project Progress Log](PROGRESS.md)
-- [Data Sources Documentation](../js/data-sources.js)
-- [Visualization Guidelines](PROGRESS.md#visualization-development-breakthrough)
-- [Database Integration Details](PROGRESS.md#database-integration-challenges-resolution) 
+- [Project Progress Log](./PROGRESS.md)
+- [Data Sources](../js/data-sources.js)
+- [Visualization Guidelines](./PROGRESS.md#visualization-development-breakthrough)
+- [Database Integration Details](./PROGRESS.md#database-integration-challenges-resolution) 

@@ -28,9 +28,10 @@ To run the project:
    ```
 
 ### Documentation Structure
-- [CONCLUSIONS.md](CONCLUSIONS.md): Final analysis and findings
-- [PROGRESS.md](PROGRESS.md): Development log and technical details
-- [party_colors.md](party_colors.md): Visualization standards
+- [CONCLUSIONS.md](./CONCLUSIONS.md): Final analysis and findings
+- [PROGRESS.md](./PROGRESS.md): Development log and technical details
+- [party_colors.md](./party_colors.md): Visualization standards
+- [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md): Project structure documentation
 
 ## Key Findings
 1. **Party Performance Changes**
@@ -92,8 +93,8 @@ This analysis and implementation is the individual work of Lucy Sonberg. While b
 - This work is protected by copyright. No part of this project may be used, reproduced, or distributed without explicit permission from Lucy Sonberg.
 - The underlying Statistics Template JS (STJS) has its own copyright © ironboy/NodeHill.
 
-For detailed implementation progress, see [PROGRESS.md](PROGRESS.md).
-For complete analysis results, see [CONCLUSIONS.md](CONCLUSIONS.md).
+For detailed implementation progress, see [PROGRESS.md](./PROGRESS.md).
+For complete analysis results, see [CONCLUSIONS.md](./CONCLUSIONS.md).
 
 ## Security Measures
 To ensure database credentials are kept secure:

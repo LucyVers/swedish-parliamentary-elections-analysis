@@ -36,6 +36,22 @@ dess trovärdighet och kvalitet.
 - Tydlig definition av inkomstmått
 - Konsistent över tid
 
+## Statistiska Centralbyrån (SCB) - Utbildningsstatistik
+**Källa**: [SCB](https://www.scb.se/hitta-statistik/statistik-efter-amne/utbildning-och-forskning/)
+
+**Trovärdighet**: MYCKET HÖG
+- Officiell utbildningsstatistik från SCB
+- Standardiserad datainsamling från lärosäten
+- Kvalitetssäkrad bearbetningsprocess
+- Transparent metodbeskrivning
+
+**Datakvalitet**:
+- Komplett dataset för alla kommuner
+- Detaljerad uppdelning av utbildningsnivåer
+- Standardiserade definitioner
+- Årlig uppdatering
+- Normaliserade kommunnamn för enkel matchning
+
 ## Lantmäteriet - Geografisk Data
 **Källa**: [Lantmäteriet](https://www.lantmateriet.se/sv/geodata/Geodataportalen)
 
@@ -75,7 +91,7 @@ try {
   
   addMdToPage(`
 ### MongoDB (kommun-info-mongodb)
-Innehåller inkomststatistik med följande struktur:
+Innehåller inkomststatistik och utbildningsdata med följande struktur:
 
 #### Exempel på inkomstdata:
   `);
@@ -83,6 +99,23 @@ Innehåller inkomststatistik med följande struktur:
     data: incomeSample,
     fixedHeader: true
   });
+
+  addMdToPage(`
+#### Utbildningsdata struktur:
+- kommunId: Kommunens ID-nummer
+- kommun: Kommunens namn
+- totalBefolkning: Total befolkning
+- forskningUtbildning: Andel med forskarutbildning (%)
+- eftergymnasial3Plus: Andel med eftergymnasial utbildning 3+ år (%)
+- eftergymnasialMindre3: Andel med eftergymnasial utbildning <3 år (%)
+- gymnasial3Ar: Andel med 3-årig gymnasial utbildning (%)
+- gymnasialHogst2Ar: Andel med högst 2-årig gymnasial utbildning (%)
+- grundskola: Andel med grundskola som högsta utbildning (%)
+- forgymnasial: Andel med förgymnasial utbildning (%)
+- kommunNormalized: Normaliserat kommunnamn för matchning
+
+*Notera: Utbildningsdata konverteras från Excel till CSV med \`education_data_converter.js\` innan den laddas in i databasen.*
+  `);
 
   // Visa geografisk data
   dbQuery.use('geo-mysql');
@@ -126,4 +159,31 @@ addMdToPage(`
 - Konsistent hantering av specialtecken
 - Automatisk verifiering av dataintegritet
 - Loggning av databearbetning
+`);
+
+addMdToPage(`
+## Datakällor och Format
+
+### Utbildningsdata (SCB)
+Statistik över utbildningsnivåer i Sveriges kommuner.
+
+#### Format och Struktur
+CSV-fil med följande kolumner:
+- kommunId: Kommunens ID-nummer
+- kommun: Kommunens namn
+- totalBefolkning: Total befolkning
+- forskningUtbildning: Andel med forskarutbildning (%)
+- eftergymnasial3Plus: Andel med eftergymnasial utbildning 3+ år (%)
+- eftergymnasialMindre3: Andel med eftergymnasial utbildning <3 år (%)
+- gymnasial3Ar: Andel med 3-årig gymnasial utbildning (%)
+- gymnasialHogst2Ar: Andel med högst 2-årig gymnasial utbildning (%)
+- grundskola: Andel med grundskola som högsta utbildning (%)
+- forgymnasial: Andel med förgymnasial utbildning (%)
+- kommunNormalized: Normaliserat kommunnamn för matchning
+
+#### Bearbetning
+- Data hämtad från SCB:s statistikdatabas
+- Konverterad från Excel till CSV med \`education_data_converter.js\`
+- Kommunnamn normaliserade för matchning med andra datakällor
+- Utbildningsnivåer konverterade till procentandelar
 `); 
