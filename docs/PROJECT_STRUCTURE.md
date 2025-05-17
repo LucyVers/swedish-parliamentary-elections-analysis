@@ -89,12 +89,31 @@ Server-side implementation:
 - Server configuration
 
 #### `visualizations/` - Data Visualization
-Visualization components and configurations:
-- Chart configurations
-- Map visualizations
-- Interactive components
+Visualization components and configurations organized by analysis type:
 
-[View Visualization Components](PROGRESS.md#visualization-components)
+```
+visualizations/
+├── county_analysis/        # County-level electoral analysis
+│   └── county_detailed_*.png
+├── education_analysis/     # Education level analysis
+│   └── education_*.png
+├── income_analysis/        # Income correlation analysis
+│   └── income_correlation_*.png
+├── screenshots/            # Application interface captures
+│   └── screenshot_*.png
+├── ui_elements/           # UI component images
+│   └── ui_*_[YYMMDD].png
+└── unemployment_analysis/ # Unemployment analysis
+    └── unemployment_*.png
+```
+
+Each analysis directory contains:
+- README.md with file descriptions
+- Standardized naming conventions
+- Visualization metadata
+- Key statistical findings
+
+[View Visualization Standards](party_colors.md)
 
 #### `tasks/` - Project Management
 Project planning and tracking:
