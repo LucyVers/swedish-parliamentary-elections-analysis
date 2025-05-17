@@ -1,8 +1,14 @@
-# Ingore database-in-use.json - since it may contain sensitive connection data
+# Database configuration and sensitive files
 databases/databases-in-use.json
-
-# Ignore database connection configuration with sensitive data
 backend/config/database_connections.json
+backend/config/database_connections.*.json
+backend/config/*.backup.json
+backend/config/*.secret.json
+backend/config/credentials.*
+backend/config/*.local.json
+
+# Keep example/template files
+!backend/config/database_connections.example.json
 
 # Logs
 logs
@@ -134,7 +140,3 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-
-# Database configuration files
-backend/config/database_connections.backup.json
-backend/config/database_connections.json
