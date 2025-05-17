@@ -1,5 +1,12 @@
 # Swedish Parliamentary Elections Analysis 2018-2022
 
+## Author and Copyright
+This analysis and implementation is the individual work of Lucy Sonberg. The project is built upon and developed from version 8 of Statistics Template JS (STJS) by NodeHill. While the foundation comes from this template, all analyses, conclusions, and enhanced implementations represent my personal work and findings.
+
+**Copyright Notices**: 
+- This work and its unique implementations, analyses, and conclusions are protected by copyright. No part of this project may be used, reproduced, or distributed without explicit permission from Lucy Sonberg.
+- The underlying Statistics Template JS (STJS) has its own copyright © ironboy/NodeHill. Please refer to the template's copyright notice in the original repository for usage terms and conditions of the base template.
+
 ## Project Overview
 This project analyzes and visualizes data from the Swedish parliamentary elections (2018 and 2022), focusing on voting behavior patterns and socio-economic correlations across Sweden's municipalities. The project is developed by Lucy Sonberg, building upon Statistics Template JS (STJS) v8 by NodeHill.
 

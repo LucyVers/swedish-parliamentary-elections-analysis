@@ -11,7 +11,7 @@ This directory contains screenshots and images of user interface components.
   - Header layout
   - Interactive elements
   - Design implementation
-- Last updated: May 2024
+- Last updated: May 2025
 
 ## Naming Convention
 Format: `ui_[component]_[detail]_[YYMMDD].png`

@@ -1,5 +1,12 @@
 # Project Structure Documentation
 
+## Author and Copyright
+This analysis and implementation is the individual work of Lucy Sonberg. The project is built upon and developed from version 8 of Statistics Template JS (STJS) by NodeHill. While the foundation comes from this template, all analyses, conclusions, and enhanced implementations represent my personal work and findings.
+
+**Copyright Notices**: 
+- This work and its unique implementations, analyses, and conclusions are protected by copyright. No part of this project may be used, reproduced, or distributed without explicit permission from Lucy Sonberg.
+- The underlying Statistics Template JS (STJS) has its own copyright © ironboy/NodeHill. Please refer to the template's copyright notice in the original repository for usage terms and conditions of the base template.
+
 ## Table of Contents
 - [Overview](#overview)
 - [Directory Structure](#directory-structure)

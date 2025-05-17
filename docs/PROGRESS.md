@@ -73,8 +73,8 @@
    - County information from verified sources
    - Education statistics from SCB (added 2025-05-10)
 
-### Phase 3: Analysis Development (May 2025)
-1. **Visualization Development** (2025-05-01)
+### Phase 3: Analysis Development (April-May 2025)
+1. **Visualization Development** (2025-04-29)
    - Implemented county selection system
    - Created party distribution visualizations
    - Added responsive design features
@@ -86,7 +86,7 @@
    - Municipality comparison tools
    - Trend analysis implementation
 
-3. **Education Data Integration** (2025-05-10)
+3. **Education Data Integration** (2025-05-04)
    - Added SCB education statistics for municipalities
    - Created education data converter (Excel to CSV)
    - Implemented municipality name normalization
